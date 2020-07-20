@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"encoding/json"
+	"tawesoft.co.uk/go/dialog"
 )
 
 type Joke struct {
@@ -39,5 +39,6 @@ func main() {
 	if jsonErr != nil {
 		log.Fatal(jsonErr)
 	}
-	fmt.Println(joke1.JOKE)
+	dialog.Alert(joke1.JOKE)
+	//fmt.Println(joke1.JOKE)
 }
